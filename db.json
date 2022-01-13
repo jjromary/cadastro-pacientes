@@ -1,0 +1,13 @@
+{
+  "pacientes": [
+    {
+      "id": 1,
+      "nome": "José Romary Freitas Brandão Júnior",
+      "data_nascimento": "19/12/1992",
+      "cpf": "00000000000",
+      "sexo": "masculino",
+      "endereco": "Av porto dos mastros",
+      "status": "ativo"
+    }
+  ]
+}
