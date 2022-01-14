@@ -10,6 +10,12 @@ export function Cards({ paciente }: cardProps) {
     <Container>
       <Content>
         <div className="data_patient">
+         <div className="active">
+         <span>
+            <h5>Status do Paciente</h5>
+            {paciente.status}
+          </span>
+         </div>
           <div className="personal">
             <span>
               <h5>Nome</h5>
@@ -33,6 +39,9 @@ export function Cards({ paciente }: cardProps) {
               {paciente.endereco}
             </span>
           </div>
+        </div>
+        <div className="actions">
+          <button>Editar Paciente</button>
         </div>
       </Content>
     </Container>
