@@ -17,6 +17,15 @@
       "sexo": "masculino",
       "endereco": "Av porto dos mastros",
       "status": "Ativo"
+    },
+    {
+      "nome": "ultimo teste do dia",
+      "data_nascimento": "21/06/1947",
+      "cpf": "00300400554",
+      "sexo": "masc",
+      "endereco": "tanquinho",
+      "status": "Ativo",
+      "id": 3
     }
   ]
 }
