@@ -2,30 +2,21 @@
   "pacientes": [
     {
       "id": 1,
-      "nome": "José",
-      "data_nascimento": "19/12/1992",
+      "nome": "José ROmary freitas",
+      "data_nascimento": "19/12/1933",
       "cpf": "00000000000",
       "sexo": "masculino",
-      "endereco": "Av porto dos mastros",
+      "endereco": "Av porto dos mastros,1325",
       "status": "Ativo"
     },
     {
-      "id": 2,
-      "nome": "Romary",
-      "data_nascimento": "19/12/1992",
-      "cpf": "10000000000",
-      "sexo": "masculino",
-      "endereco": "Av porto dos mastros",
-      "status": "Ativo"
-    },
-    {
-      "nome": "ultimo teste do dia",
-      "data_nascimento": "21/06/1947",
-      "cpf": "00300400554",
+      "nome": "eu eu mesmo",
+      "data_nascimento": "121212",
+      "cpf": "00100100101",
       "sexo": "masc",
-      "endereco": "tanquinho",
-      "status": "Ativo",
-      "id": 3
+      "endereco": "av logo ali pertinho",
+      "status": "Inativo",
+      "id": 2
     }
   ]
 }

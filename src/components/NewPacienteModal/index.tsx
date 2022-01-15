@@ -1,9 +1,6 @@
 import Modal from "react-modal";
-import { Container } from "./styles";
 import closeimg from "../../assets/close.svg";
-import { Paciente } from "../../types/Paciente";
-import React, { useState } from "react";
-import axios from "axios";
+import { Form } from "../Form";
 
 Modal.setAppElement("#root"); //acessibilidade
 
@@ -14,28 +11,7 @@ interface NewPacienteModalProps {
 
 
 export function NewPacienteModal({isOpen, onRequestClose}: NewPacienteModalProps) {
-  const [values, setValues] = useState<Paciente[]>([]);
-
-  function Onchange(ev: React.ChangeEvent<HTMLInputElement>) {
-    const { name, value } = ev.target;
-
-    setValues({ ...values, [name]: value });
-  }
-
-  function OnchangeStatus(ev: React.ChangeEvent<HTMLSelectElement>) {
-    const { name, value } = ev.target;
-
-    setValues({ ...values, [name]: value });
-    
-  }
-
-  function onSubmit(ev: React.SyntheticEvent) {
-    axios.post("http://localhost:5000/pacientes", values)
-      .then((response) => {});
-  }
-
-  console.log("OnchangeStatus",{values})
-
+  
   return (
     <>
       <Modal
@@ -52,25 +28,8 @@ export function NewPacienteModal({isOpen, onRequestClose}: NewPacienteModalProps
           <img src={closeimg} alt="fechar modal" />
         </button>
         
-        <Container onSubmit={onSubmit}>
-          <h2> Cadastrar Novo Paciente</h2>
-
-          <input placeholder="Nome" id="nome" name="nome" onChange={Onchange} required/>
-          <input placeholder="Data de nascimento" id="data_nascimento" name="data_nascimento"onChange={Onchange} required/>
-          <input placeholder="CPF" id="cpf" name="cpf" onChange={Onchange} required/>
-          <input placeholder="Sexo" id="sexo" name="sexo" onChange={Onchange} required/>
-          <input placeholder="Endereço" id="endereco" name="endereco" onChange={Onchange} />
-
-          <div className="labelStatus">
-            <span>Status do Paciente</span>
-          </div>
-
-          <select id="status" name="status" onChange={OnchangeStatus} required>
-            <option value="Ativo" >Ativo</option>
-            <option value="Inativo">Inativo</option>
-          </select>
-          <button type="submit">Salvar</button>
-        </Container>
+        <Form id={null}/>
+        
       </Modal>
     </>
   );

@@ -1,5 +1,6 @@
 import { Container, Content } from "./styles";
 import { Paciente } from "../../types/Paciente";
+import { Link } from "react-router-dom"
 
 type cardProps = {
   paciente: Paciente;
@@ -41,7 +42,7 @@ export function Cards({ paciente }: cardProps) {
           </div>
         </div>
         <div className="actions">
-          <button>Editar Paciente</button>
+          <Link to={`/edit/${paciente.id}`}>Editar Paciente</Link>
         </div>
       </Content>
     </Container>
