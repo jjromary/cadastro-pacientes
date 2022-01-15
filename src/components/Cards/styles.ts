@@ -5,6 +5,7 @@ export const Container = styled.div`
   background: var(--backgroundCard);
   display: flex;
   align-items: center;
+  margin-bottom: 2rem;
 `;
 
 export const Content = styled.div`
@@ -24,7 +25,7 @@ export const Content = styled.div`
     .active {
       display: flex;
       align-items: center;
-      margin: 1.25rem;
+      margin: 0.5rem;
       span {
         margin-left: 1.25rem;
         background: var(--white);
@@ -36,7 +37,7 @@ export const Content = styled.div`
     .personal {
       display: flex;
       align-items: center;
-      margin: 1.25rem;
+      margin: 0.5rem;
 
       span {
         margin-left: 1.25rem;
@@ -48,7 +49,7 @@ export const Content = styled.div`
     .documentation {
       display: flex;
       align-items: left;
-      margin: 1.25rem;
+      margin: 0.5rem;
 
       span {
         margin-left: 1.25rem;
@@ -60,7 +61,7 @@ export const Content = styled.div`
     .locality {
       display: flex;
       align-items: left;
-      margin: 1.25rem;
+      margin: 0.5rem;
       span {
         margin-left: 1.25rem;
         background: var(--white);
