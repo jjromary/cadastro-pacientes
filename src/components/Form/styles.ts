@@ -25,6 +25,13 @@ margin: 0 auto;
       padding: 1rem;
     }
   }
+  .labelStatus {
+    margin-top: 1.25rem;
+    text-align: center;
+    span{
+      font-size: 1rem;
+    }
+  }
 
   .saveButton{
     button[type="submit"] {
@@ -45,13 +52,8 @@ margin: 0 auto;
         filter: brightness(0.9);
       }
     }
-
   }
 
-  .labelStatus {
-    margin-top: 1.25rem;
-    text-align: center;
-  }
 
   select {
     width: 100%;

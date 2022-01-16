@@ -1,6 +1,6 @@
 import { Container, Content } from "./styles";
 import { Paciente } from "../../types/Paciente";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 type cardProps = {
   paciente: Paciente;
@@ -11,12 +11,12 @@ export function Cards({ paciente }: cardProps) {
     <Container>
       <Content>
         <div className="data_patient">
-         <div className="active">
-         <span>
-            <h5>Status do Paciente</h5>
-            {paciente.status}
-          </span>
-         </div>
+          <div className="active">
+            <span>
+              <h5>Status do Paciente</h5>
+              {paciente.status}
+            </span>
+          </div>
           <div className="personal">
             <span>
               <h5>Nome</h5>
@@ -42,7 +42,9 @@ export function Cards({ paciente }: cardProps) {
           </div>
         </div>
         <div className="actions">
-          <Link to={`/edit/${paciente.id}`}>Editar Paciente</Link>
+          <Link to={`/edit/${paciente.id}`}>
+            <button>Editar Paciente</button>
+          </Link>
         </div>
       </Content>
     </Container>

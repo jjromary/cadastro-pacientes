@@ -1,15 +1,13 @@
 import { Container } from "./styles";
 
 interface ButtonProps {
-  name: string
+  name: string;
 }
 
-export function Button({name}: ButtonProps) {
+export function Button({ name }: ButtonProps) {
   return (
     <Container>
-      <button type="button" >
-        {name}
-      </button>
+      <button type="button">{name}</button>
     </Container>
   );
 }

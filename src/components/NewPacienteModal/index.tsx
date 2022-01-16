@@ -9,9 +9,7 @@ interface NewPacienteModalProps {
   onRequestClose: () => void;
 }
 
-
 export function NewPacienteModal({isOpen, onRequestClose}: NewPacienteModalProps) {
-  
   return (
     <>
       <Modal
@@ -27,9 +25,8 @@ export function NewPacienteModal({isOpen, onRequestClose}: NewPacienteModalProps
         >
           <img src={closeimg} alt="fechar modal" />
         </button>
-        
-        <Form id={null}/>
-        
+
+        <Form id={null} />
       </Modal>
     </>
   );

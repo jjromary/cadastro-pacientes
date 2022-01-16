@@ -72,7 +72,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 576px;
     /* height: 597px; */
-    background: var(--white);
+    background: #FFFFFF;
     padding: 3rem;
     position: relative;
     border-radius: 1.25rem;    
@@ -85,12 +85,13 @@ export const GlobalStyle = createGlobalStyle`
     right: 1.5rem;
     top: 1.5rem;
     border: 0;
+    color: #A8A8B3;
     background: transparent;
 
     transition: filter 0.2s;
 
     &:hover {
-        filter: brightness(0.8);
+        filter: brightness(0.7);
     }
   }
 

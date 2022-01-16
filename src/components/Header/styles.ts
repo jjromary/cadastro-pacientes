@@ -14,10 +14,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
 
-
     h1 {
-      font-family: Inter 400;
-      font-size: 1.6rem;
       margin-left: 1.25rem;
     }
   }

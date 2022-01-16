@@ -1,81 +1,115 @@
-import React, { useEffect, useState } from "react";
-// import { Paciente } from "../../types/Paciente";
+import React, { useEffect, useState, useContext } from "react";
 import { Container } from "./styles";
-import {useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-interface idProps  {
+interface idProps {
   id: number | null;
 }
 
 const initialValue = {
-  nome: '',
-  data_nascimento: '',
-  cpf: '',
-  sexo: '',
-  endereco: '',
-  status: 'Ativo'
-}
+  nome: "",
+  data_nascimento: "",
+  cpf: "",
+  sexo: "",
+  endereco: "",
+  status: "Ativo",
+};
 
-export function Form ({id}:( idProps)){
+export function Form({ id }: idProps) {
   const [values, setValues] = useState(initialValue);
-  const navigate = useNavigate() 
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:5000/pacientes/${id}`)
-        .then((response)=>{
-          setValues(response.data)
-        })
+      axios.get(`http://localhost:5000/pacientes/${id}`).then((response) => {
+        setValues(response.data);
+      });
     }
-  }, [])
+  }, []);
 
+  //ARMAZENAR VALORES TAG INPUT
   function Onchange(ev: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = ev.target;
 
     setValues({ ...values, [name]: value });
   }
 
+  //ARMAZENAR VALOR TAG SELECT
   function OnchangeStatus(ev: React.ChangeEvent<HTMLSelectElement>) {
     const { name, value } = ev.target;
 
     setValues({ ...values, [name]: value });
-    
   }
 
   function onSubmit(ev: React.SyntheticEvent) {
-    
-    const method = id ? 'put' : 'post';
-    const url = id ? `http://localhost:5000/pacientes/${id}` : `http://localhost:5000/pacientes`
+    const method = id ? "put" : "post";
+    const url = id
+      ? `http://localhost:5000/pacientes/${id}`
+      : `http://localhost:5000/pacientes`;
 
-    axios[ method ]( url, values )
-      .then((response) => {
-      });
-      
-      navigate("/");
+    axios[method](url, values).then((response) => {});
+    navigate("/");
   }
-    return(
-        <Container onSubmit={onSubmit}>
-          <h2> Formulário Paciente</h2>
 
-          <input placeholder="Nome" id="nome" name="nome" onChange={Onchange} value={values.nome} required/>
-          <input placeholder="Data de nascimento" id="data_nascimento" name="data_nascimento"onChange={Onchange} value={values.data_nascimento} required/>
-          <input placeholder="CPF" id="cpf" name="cpf" onChange={Onchange} value={values.cpf} required/>
-          <input placeholder="Sexo" id="sexo" name="sexo" onChange={Onchange} value={values.sexo} required/>
-          <input placeholder="Endereço" id="endereco" name="endereco" onChange={Onchange} value={values.endereco} />
+  return (
+    <Container onSubmit={onSubmit}>
+      <h2> Formulário Paciente</h2>
 
-          <div className="labelStatus">
-            <span>Status do Paciente</span>
-          </div>
+      <input
+        placeholder="Nome"
+        id="nome"
+        type="text"
+        name="nome"
+        onChange={Onchange}
+        value={values.nome}
+        required
+      />
+      <input
+        placeholder="Data de nascimento"
+        type="date"
+        id="data_nascimento"
+        name="data_nascimento"
+        onChange={Onchange}
+        value={values.data_nascimento}
+        required
+      />
+      <input
+        placeholder="CPF"
+        id="cpf"
+        name="cpf"
+        onChange={Onchange}
+        value={values.cpf}
+        required
+      />
+      <input
+        placeholder="Sexo"
+        id="sexo"
+        name="sexo"
+        onChange={Onchange}
+        value={values.sexo}
+        required
+      />
+      <input
+        placeholder="Endereço"
+        id="endereco"
+        name="endereco"
+        onChange={Onchange}
+        value={values.endereco}
+      />
 
-          <select id="status" name="status" onChange={OnchangeStatus} required>
-            <option value="Ativo">Ativo</option>
-            <option value="Inativo">Inativo</option>
-          </select>
-          <div  className="saveButton">
-          <button type="submit">Salvar</button>
+      <div className="labelStatus">
+        <span>Status do Paciente</span>
+      </div>
 
-          </div>
-        </Container>
-    )
+      <select id="status" name="status" onChange={OnchangeStatus} required>
+        <option value="Ativo">Ativo</option>
+        <option value="Inativo">Inativo</option>
+      </select>
+      <div className="saveButton">
+        <button type="submit">Salvar</button>
+      </div>
+    </Container>
+  );
 }
